@@ -5,10 +5,8 @@ import { expressMiddleware } from '@apollo/server/express4';
 async function init() {
     const app = express();
     const PORT = process.env.PORT || 8000
-    
     app.use(express.json())
- 
-
+    
     let gqlServer = await createApolloGraphqlServer()
 
     app.use('/graphql', expressMiddleware(gqlServer))
