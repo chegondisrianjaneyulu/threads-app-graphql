@@ -4,5 +4,5 @@ export const mutations = `
      lastName:String!, 
      email: String!, 
      password: String!, 
-     profileImageUrl: String): String
+     profileImageUrl: String!): String
 `

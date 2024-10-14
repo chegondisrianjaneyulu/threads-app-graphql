@@ -5,6 +5,9 @@ const queries = {
     getUserToken: async (_:any, payload: GetUserTokenPayload) => {
         const token = await UserService.getUserToken(payload);
         return token;
+    },
+    getUsers: async () => {
+        return await UserService.getUsers()
     }
 }
 

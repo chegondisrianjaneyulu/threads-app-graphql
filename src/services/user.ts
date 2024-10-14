@@ -62,6 +62,14 @@ class UserService {
 
     }
 
+    public static decodeJWTToken(token: string) {
+        return JWT.verify(token, JWT_SECRET);
+    }
+
+    public static getUsers() {
+        return prismaClient.user.findMany()
+    }
+
 
 }
 
