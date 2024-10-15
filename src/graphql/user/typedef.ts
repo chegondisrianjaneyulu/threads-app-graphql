@@ -3,5 +3,7 @@ export const typeDefs = `
     id: ID!
     name:String!
     email:  String!
+    posts: [Post]
+    comments: [Comment]
   }
 `

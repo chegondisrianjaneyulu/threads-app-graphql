@@ -1,9 +1,9 @@
 export const typeDefs = `
-   type Post {
+   type Comment {
     id: ID!, 
     title: String,
     content: String
+    post: Post
     user: User
-    comment: [Comment]
    }
 `
