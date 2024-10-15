@@ -29,7 +29,7 @@ class CommentService {
     public static async updateComment(id:number, payload:UpdateCommentPayload) {
         return await prismaClient.comment.update({where: {id}, data: payload})
     }
-
+ 
     public static async deleteComment(id:number) {
         return await prismaClient.comment.delete({where: {id}});
     }
