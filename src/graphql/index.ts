@@ -1,7 +1,7 @@
 import { ApolloServer } from '@apollo/server';
 import { User } from './user';
-import UserService from '../services/user';
-import  {Request} from 'express'
+import {Post} from './post';
+import { Comment } from './comment';
 
 interface Context {
     user?: any; 
@@ -9,20 +9,28 @@ interface Context {
 async function createApolloGraphqlServer() {
     const gqlServer = new ApolloServer<Context>({
         typeDefs: `
-          ${User.typeDefs},
+               ${User.typeDefs},
+               ${Post.typeDefs},
+               ${Comment.typeDefs},
+               
           type Query {
-              ${User.queries}
+               ${User.queries},
+               ${Comment.queries}
+
           }
           type Mutation {
               ${User.mutations}
+              ${Comment.mutations}
           }
         `,
         resolvers: {
             Query: {
-                ...User.resolvers.queries
+                ...User.resolvers.queries,
+                ...Comment.resolvers.queries
             },
             Mutation: {
-                ...User.resolvers.mutations
+                ...User.resolvers.mutations,
+                ...Comment.resolvers.mutations
             }
         }
 
