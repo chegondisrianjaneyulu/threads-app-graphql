@@ -15,21 +15,26 @@ async function createApolloGraphqlServer() {
                
           type Query {
                ${User.queries},
-               ${Comment.queries}
+               ${Post.queries},
+               ${Comment.queries},
 
           }
           type Mutation {
-              ${User.mutations}
+              ${User.mutations},
+              ${Post.mutations},
               ${Comment.mutations}
           }
         `,
         resolvers: {
             Query: {
                 ...User.resolvers.queries,
+                ...Post.resolvers.queries,
                 ...Comment.resolvers.queries
+
             },
             Mutation: {
                 ...User.resolvers.mutations,
+                ...Post.resolvers.mutations,
                 ...Comment.resolvers.mutations
             }
         }

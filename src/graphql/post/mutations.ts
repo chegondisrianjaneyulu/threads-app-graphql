@@ -1,3 +1,3 @@
 export const mutations = `
-  createPost():String
+  createPost(title:String, content:String, authorId:Number):String
 `
