@@ -20,7 +20,11 @@ async function init() {
     })
 
     app.use('/posts', (req:Request, res:Response) => {
-        res.send('Users')
+        res.send('posts')
+    })
+
+    app.use('/comments', (req:Request, res:Response) => {
+        res.send('comments')
     })
 
     app.listen(PORT, () => {console.log('Server is started at port ', PORT)}) 
