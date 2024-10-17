@@ -15,6 +15,10 @@ async function init() {
         res.send('hello')
     })
 
+    app.use('/users', (req:Request, res:Response) => {
+
+    })
+
     app.listen(PORT, () => {console.log('Server is started at port ', PORT)}) 
 }
 
