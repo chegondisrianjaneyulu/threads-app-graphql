@@ -2,7 +2,6 @@ import express, {Request, Response} from 'express'
 import createApolloGraphqlServer from './graphql'
 import { expressMiddleware } from '@apollo/server/express4';
 
-
 async function init() {
     const app = express();
     const PORT = process.env.PORT || 8000
